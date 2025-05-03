@@ -3,7 +3,7 @@
 # Contents: Chinese calendar calculations.
 # Version: 1.11
 # Python Version: 3.13
-# Date: 2025--05-02
+# Date: 2025-05-02
 # By: Rick Kelly
 # Email: rk55911@outlook.com
 # ########################################################################################
