@@ -447,11 +447,6 @@ def cmSolarRefraction (nElevation: float, nLatitude: float) -> float:
           + cmAngle(0,0,19) * nElevationSQRT
 # End Def
 
-#    nEarthRadius = cmEarthRadius(nLatitude)
-#    Function = cCalendarClass.VisibleHorizon _
-#             + cmArcCoSineDegrees(nEarthRadius / (nEarthRadius + IIf(nElevation > 0,nElevation,0))) _
-#             + cmAngle(0,0,19) * IIf(nElevation > 0,Sqr(nElevation),0)
-
 def cmDynamicalFromUniversal (nUniversal: float) -> float:
 #
 # Convert Universal Time to Dynamical
