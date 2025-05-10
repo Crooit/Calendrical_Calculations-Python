@@ -337,7 +337,7 @@ def cmEquationOfTime (nMoment: float) -> float:
    return cmSignum(nEquation) * nEquationAdjust
 # End Def
 
-def cmApparentFromLocal (nMoment: float) -> float:
+def cmApparentFromLocal (nMoment: float, nLongitude: float) -> float:
 #
 # Convert Local time to Apparent
 #
@@ -447,20 +447,6 @@ def cmSolarRefraction (nElevation: float, nLatitude: float) -> float:
           + cmAngle(0,0,19) * nElevationSQRT
 # End Def
 
-def cmDynamicalFromUniversal (nUniversal: float) -> float:
-#
-# Convert Universal Time to Dynamical
-#
-   return nUniversal + cmEphemerisCorrection(nUniversal)
-# End Def
-
-def cmUniversalFromDynamical (nDynamical: float) -> float:
-#
-# Convert Dynamical Time to Universal
-#
-   return nDynamical - cmEphemerisCorrection(nDynamical)
-# End Def
-
 def cmEphemerisCorrection (nMoment: float) -> float:
 #
 # General adjustment for the slowly decreasing rotation of the earth
@@ -495,6 +481,20 @@ def cmEphemerisCorrection (nMoment: float) -> float:
       nY = (nYear - 1820) / 100
       nCorrection = (-20 + 32 * nY**2) / 86400.0
    return nCorrection
+# End Def
+
+def cmDynamicalFromUniversal (nUniversal: float) -> float:
+#
+# Convert Universal Time to Dynamical
+#
+   return nUniversal + cmEphemerisCorrection(nUniversal)
+# End Def
+
+def cmUniversalFromDynamical (nDynamical: float) -> float:
+#
+# Convert Dynamical Time to Universal
+#
+   return nDynamical - cmEphemerisCorrection(nDynamical)
 # End Def
 
 def cmAberration (nC: float) -> float:
